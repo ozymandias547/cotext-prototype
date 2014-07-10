@@ -1,0 +1,6 @@
+.Signup form,
+.Login form,
+.Settings form  {
+	padding: 30px;
+	background-color: #ddddc5;
+}

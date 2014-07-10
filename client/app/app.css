@@ -1,0 +1,43 @@
+/**
+ * App-wide Styles
+ */
+
+html, body {
+	height: 100%;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.navbar-default {
+	background-color: #040400;
+	border-color: #040400; 
+}
+
+.navbar-brand {
+	height: auto;
+}
+
+.navbar-static-top {
+	border-bottom: solid #4e4e30 .5em;
+}
+
+.footer {
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font: 1em Candara;
+	font-weight: 100;
+	color: #ddddad;
+	background-color: #040400;
+	bottom: 0px;
+	border-top: solid #4e4e30 .5em;
+	z-index: 2;
+    padding: 30px 0;
+    margin-top: 70px;
+}
