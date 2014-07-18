@@ -1,6 +1,9 @@
-/**
+/** -----------------
  * App-wide Styles
- */
+ ----------------- */
+body {
+    background: url('/assets/images/heb4.png') 100% 100%;
+}
 
 html, body {
 	height: 100%;
@@ -24,6 +27,11 @@ html, body {
 
 .navbar-static-top {
 	border-bottom: solid #4e4e30 .5em;
+}
+
+.nav .navbar-text,
+.navbar-default .navbar-nav > li > a {
+	color: rgb(221, 221, 173);
 }
 
 .footer {

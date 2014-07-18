@@ -1,22 +1,30 @@
-<div ng-include="'components/navbar/navbar.html'"></div>
+<div ng-include="'components/navbar/navbar.html'" ></div>
 
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <!-- <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman"> -->
-  </div>
-</header>
-
-<div class="container">
+<div class="container main">
   <div class="row">
-    <div class="col-lg-12">
-      <!-- <h1 class="page-header">Features:</h1> -->
-      <!-- <ul class="nav nav-tabs nav-stacked col-lg-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul> -->
+    <div class="col-lg-9">
+      <div class="language section">
+       <!--  <select>
+          <option>hi</option>
+          <option>hi</option>
+          <option>hi</option> -->
+      </div>
+      <div class="language section">
+        <div class="verse" ng-repeat="verse in verses">
+          <span class="verseNumber">Verse {{ verse.number }} </span><span ng-repeat="word in verse.words" class="word" ng-click="onWordClick(word)">{{ word.text }} </span> 
+        </div>
+      </div>
+      <div class="translate section">
+        <textarea class="translateInput"></textarea>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="vocabulary section">
+        <div ng-repeat="word in vocabWords" ng-click="removeWord(word)" class="word">{{ word }}</div>
+      </div>
     </div>
   </div>
+
 </div>
 
 <footer class="footer">

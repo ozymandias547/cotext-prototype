@@ -1,22 +1,39 @@
 'use strict';
 
 angular.module('cotextPrototypeApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    // Build verse view model
+    $scope.verses = [
+        {   
+            number : 1,
+            text : "A Hebrew or Greek scripture verse.",
+            words : []
+        }
+    ];
+
+    // Populate verses view model
+    $scope.verses.forEach(function(verse) { 
+        verse.text.split(" ").forEach(function(word) { 
+            verse.words.push({text: word}); 
+        });
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
+    // Vocab words view model
+    $scope.vocabWords = {};
+    
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });
+    // Controller methods
+    $scope.onWordClick = function(word) {
+        // Before adding a vocab word, remove punctuation and make it lower case;
+        word = word.text.replace(/[\!\.\,\?\\]/g, "").toLowerCase();
+        $scope.vocabWords[word] = word;
+    }
+
+    $scope.removeWord = function(word) {
+        if ($scope.vocabWords[word] !== "undefined")
+            delete $scope.vocabWords[word];
+    }
+
+});
+

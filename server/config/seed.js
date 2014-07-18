@@ -7,6 +7,8 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Vocabulary = require('../api/vocabulary/vocabulary.model');
+
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -35,15 +37,40 @@ User.find({}).remove(function() {
     provider: 'local',
     name: 'Test User',
     email: 'test@test.com',
-    password: 'test'
+    password: 'test',
+    testId: 1
   }, {
     provider: 'local',
     role: 'admin',
     name: 'Admin',
     email: 'admin@admin.com',
-    password: 'admin'
+    password: 'admin',
+    testId: 2
+  },{
+    provider: 'local',
+    role: 'admin',
+    name: 'Joseph Jung',
+    email: 'a@a.a',
+    password: 'a',
+    testId: 3
   }, function() {
       console.log('finished populating users');
     }
   );
+});
+
+Vocabulary.find({}).remove(function() {
+  Vocabulary.create({
+    name: "Word1",
+    info: "Description of word 1",
+    user: 1
+  }, {
+    name: "Word2",
+    info: "Description of word 2",
+    user: 1
+  }, {
+    name: "Word3",
+    info: "Description of word 3",
+    user: 1
+  })
 });

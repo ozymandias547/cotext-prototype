@@ -1,27 +1,33 @@
-.thing-form {
-    margin: 20px 0;
+/** -----------------
+ * Main Page styles
+ ----------------- */
+
+.main .section {
+    background: #040400;
+    color: rgb(221, 221, 173);
+    padding: 10px;
 }
 
-#banner {
-    border-bottom: none;
-    margin-top: -20px;
+.main .word {
+	font-size: 16px;
 }
 
-#banner h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.main .word:hover {
+	color: red;
+	cursor: pointer;
 }
 
-.hero-unit {
-    position: relative;
-    padding: 30px 15px;
-    color: #F5F5F5;
-    text-align: center;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-    background: #4393B9;
+.main .verseNumber {
+	font-size: 20px;
+	color: gray;
 }
 
-body {
-    background: url('/assets/images/heb4.png') 100% 100%;
+.main .translateInput {
+	width: 100%;
+	max-width: 100%;
+	background: rgb(221, 221, 173);
+	border: none;
+	color: black;
+	border-radius: 2px;
+	padding: 5px;
 }
